@@ -4,8 +4,6 @@
 # file: calculator.py
 # time: 2021/6/19 2:00 下午
 
-import decimal
-
 # 被测代码 计算器
 class Calculator:
     def add(self, a, b):
