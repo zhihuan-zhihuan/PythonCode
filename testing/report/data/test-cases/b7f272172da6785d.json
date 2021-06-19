@@ -1,0 +1,129 @@
+{
+  "uid" : "b7f272172da6785d",
+  "name" : "test_add_xfail[float]",
+  "fullName" : "test_calculator.TestCalculator#test_add_xfail",
+  "historyId" : "c0b07492053d53d5b0bc6cca3a9391c4",
+  "time" : {
+    "start" : 1624093043415,
+    "stop" : 1624093043415,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "statusMessage" : "XPASS 浮点数相加精度损失",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "tips",
+    "time" : {
+      "start" : 1624093043414,
+      "stop" : 1624093043414,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "xunit_setup_class_fixture_TestCalculator",
+    "time" : {
+      "start" : 1624093043373,
+      "stop" : 1624093043373,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tips::0",
+    "time" : {
+      "start" : 1624093043419,
+      "stop" : 1624093043419,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "xunit_setup_class_fixture_TestCalculator::0",
+    "time" : {
+      "start" : 1624093043420,
+      "stop" : 1624093043420,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "加法异常用例"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(True, reason='浮点数相加精度损失')"
+  }, {
+    "name" : "suite",
+    "value" : "test_calculator"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCalculator"
+  }, {
+    "name" : "host",
+    "value" : "diweideMacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "54280-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_calculator"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "a",
+    "value" : "0.1"
+  }, {
+    "name" : "b",
+    "value" : "0.2"
+  }, {
+    "name" : "values",
+    "value" : "0.3"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail(True, reason='浮点数相加精度损失')" ]
+  },
+  "source" : "b7f272172da6785d.json",
+  "parameterValues" : [ "0.1", "0.2", "0.3" ]
+}
