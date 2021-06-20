@@ -3,19 +3,12 @@
 # author: zhihuan
 # file: test_calculator.py
 # time: 2021/6/19 2:04 下午
-
-"""
-课后作业
-2、使用参数化完成测试用例的自动生成
-注意：
-使用等价类，边界值，因果图等设计测试用例
-"""
+import logging
 import pytest
 import allure
 import yaml
-from function.calculator import Calculator
 
-
+# 获取yaml文件中的数据
 def get_datas():
     with open("./datas/datas.yaml") as f:
         datasdict = yaml.safe_load(f)
@@ -25,35 +18,47 @@ def get_datas():
         div_err_data = (datasdict["div_err"]["datas"], datasdict["div_err"]["ids"])
         return add_suc_data, add_err_data, div_suc_data, div_err_data
 
-@allure.title("计算机加、除功能测试")
-class TestCalculator:
-    def setup_class(self):
-        self.calc = Calculator()
 
-    @pytest.fixture()
-    def tips(self):
-        print("====开始计算====")
-        yield
-        print("====计算结束====")
+# 添加大的功能点
+@allure.feature("计算器测试")
+class TestCalculator:
+    @allure.story("加法用例")
+    @allure.title("加法正常用例：{a}+{b}")
+    # 参数化
+    @pytest.mark.parametrize('a,b,values', get_datas()[0][0], ids=get_datas()[0][1])
+    # 报告添加测试步骤
+    @allure.step("步骤")
+    # 创建加法测试正常测试用例
+    def test_add_suc(self, tips, calc, a, b, values):
+        with open("./image/baidu.png", "rb") as f:
+            context = f.read()
+            allure.attach(context, "错误图片", attachment_type=allure.attachment_type.PNG)
+        allure.attach("文本附件", "文本标题", allure.attachment_type.TEXT)
+        logging.info(f"assert [{a}+{b}]")
+        assert values == calc.add(a, b)
 
     @allure.story("加法用例")
-    @pytest.mark.parametrize('a,b,values', get_datas()[0][0], ids=get_datas()[0][1])
-    def test_add_suc(self, tips, a, b, values):
-        assert values == self.calc.add(a, b)
-
-    @allure.story("加法异常用例")
+    @allure.title("加法异常用例：{a}+{b}")
     @pytest.mark.parametrize('a,b,values', get_datas()[1][0], ids=get_datas()[1][1])
+    # 创建加法异常测试用例
     @pytest.mark.xfail(True, reason="浮点数相加精度损失")
-    def test_add_xfail(self, tips, a, b, values):
+    def test_add_float(self, tips, calc, a, b, values):
+        logging.info(f"assert [{a}+{b}]")
         assert isinstance(a, float) and isinstance(b, float)
 
     @allure.story("除法用例")
+    @allure.title("除法正常用例：{a}/{b}")
     @pytest.mark.parametrize('a,b,values', get_datas()[2][0], ids=get_datas()[2][1])
-    def test_div_suc(self, tips, a, b, values):
-        assert values == self.calc.div(a, b)
+    # 创建除法正常用例
+    def test_div_suc(self, tips, calc, a, b, values):
+        logging.info(f"assert [{a}/{b}]")
+        assert values == calc.div(a, b)
 
-    @allure.story("除法异常用例")
+    @allure.story("除法用例")
+    @allure.title("除法异常用例：{a}/{b}")
     @pytest.mark.parametrize('a,b,values', get_datas()[3][0], ids=get_datas()[3][1])
-    @pytest.mark.xfail(True, reason="0不能做除数")
-    def test_div_xfail(self, tips, a, b, values):
-        assert b == 0
+    # 创建除法异常测试用例
+    def test_div_zero(self, tips, calc, a, b, values):
+        with pytest.raises(ZeroDivisionError):
+            logging.info(f"assert [{a}/{b}]")
+            assert values == calc.div(a, b)
