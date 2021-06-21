@@ -26,7 +26,10 @@ class TestCalculator:
     @allure.title("加法正常用例：{a}+{b}")
     # 参数化
     @pytest.mark.parametrize('a,b,values', get_datas()[0][0], ids=get_datas()[0][1])
-    # 报告添加测试步骤
+    """
+    @allure.step()装饰器会将函数中引用的fixture打印出来,
+    想要单独加步骤用 with allure.step('步骤名'):
+    """
     @allure.step("步骤")
     # 创建加法测试正常测试用例
     def test_add_suc(self, tips, calc, a, b, values):
