@@ -1,3 +1,0 @@
-[32mINFO    [0m root:conftest.py:22 ====开始计算====
-[32mINFO    [0m root:test_calculator.py:54 assert [100/100]
-[32mINFO    [0m root:conftest.py:24 ====计算结束====

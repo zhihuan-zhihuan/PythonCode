@@ -1,0 +1,11 @@
+2021-06-26 19:23:06 [INFO] 设置浏览器驱动，窗口最大化 (test_weixin.py:23)
+2021-06-26 19:23:06 [INFO] 添加cookie (test_weixin.py:38)
+2021-06-26 19:23:10 [INFO] 进入企业微信主页 (test_weixin.py:43)
+2021-06-26 19:23:10 [INFO] 进入通讯录页面 (test_weixin.py:49)
+2021-06-26 19:23:11 [INFO] 进入添加成员页面 (test_weixin.py:55)
+2021-06-26 19:23:12 [INFO] 填写姓名 (test_weixin.py:61)
+2021-06-26 19:23:12 [INFO] 填写账号 (test_weixin.py:65)
+2021-06-26 19:23:13 [INFO] 完成新增 (test_weixin.py:73)
+2021-06-26 19:23:14 [INFO] assert '致幻' in ''
+ +  where '' = <selenium.webdriver.remote.webelement.WebElement (session="ff5ea878e141d7522d99b68ae06dd83f", element="99bdf854-dbfc-4a6e-99c9-dfb721e10861")>.text (test_weixin.py:82)
+2021-06-26 19:23:14 [INFO] 关闭浏览器 (test_weixin.py:27)

@@ -1,0 +1,2 @@
+[32mINFO    [0m root:conftest.py:17 设置浏览器驱动，窗口最大化
+[32mINFO    [0m root:conftest.py:20 关闭浏览器

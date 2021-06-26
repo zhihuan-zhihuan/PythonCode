@@ -1,0 +1,11 @@
+[32mINFO    [0m root:test_weixin.py:23 设置浏览器驱动，窗口最大化
+[32mINFO    [0m root:test_weixin.py:38 添加cookie
+[32mINFO    [0m root:test_weixin.py:43 进入企业微信主页
+[32mINFO    [0m root:test_weixin.py:49 进入通讯录页面
+[32mINFO    [0m root:test_weixin.py:55 进入添加成员页面
+[32mINFO    [0m root:test_weixin.py:61 填写姓名
+[32mINFO    [0m root:test_weixin.py:65 填写账号
+[32mINFO    [0m root:test_weixin.py:73 完成新增
+[32mINFO    [0m root:test_weixin.py:82 assert '致幻' in ''
+ +  where '' = <selenium.webdriver.remote.webelement.WebElement (session="ff5ea878e141d7522d99b68ae06dd83f", element="99bdf854-dbfc-4a6e-99c9-dfb721e10861")>.text
+[32mINFO    [0m root:test_weixin.py:27 关闭浏览器
